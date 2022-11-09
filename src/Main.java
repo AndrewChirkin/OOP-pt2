@@ -1,5 +1,7 @@
 import transport.Car;
 
+import java.time.LocalDate;
+
 public class Main {
     public static void main(String[] args) {
         Car Lada = new Car("Lada", "Granta", "жёлтый", 2015, 1.7,"Россия","","","",4,"летняя");
@@ -12,6 +14,16 @@ public class Main {
         BMW.carInfo();
         Kia.carInfo();
         Hyundai.carInfo();
-
+    tireWarning("летняя");
+    }
+    public static void tireWarning(String tireType){
+        String rezina = "летняя";
+        LocalDate winter = null;
+        int cold = winter.getMonthValue();
+        if(tireType.equals(rezina) && cold == 12 ){
+            System.out.println("Пора бы поставить зимнюю резину!");
+        }else if(cold == 3){
+            System.out.println("Пора ставить летнюю резину!");
+        }
     }
 }
