@@ -1,16 +1,17 @@
+import transport.Car;
+
 public class Main {
     public static void main(String[] args) {
-        Flower Rose = new Flower("Роза", "", "Голландия", 35.59, 0);
-        Flower Chrizo = new Flower("Хризантема", "", "", 15, 5);
-        Flower Pion = new Flower("Пион", "", "", 69.9, 1);
-        Flower Gipsophyla = new Flower("Гипсофила", "", "Турция", 19.5, 10);
-
-        Pion.flowerInfo();
-        getBoo
-
+        Car Lada = new Car("Lada", "Granta", "жёлтый", 2015, 1.7,"Россия","","","",4,"летняя");
+        Car Audi = new Car("Audi", "A8 50 L TDI quattro", "чёрный", 2020, 3.0,"Германия","","","",4,"летняя");
+        Car BMW = new Car("BMW", "Z8", "чёрный", 2021, 3.0,"Германия","","","",4,"летняя");
+        Car Kia = new Car("Kia", "Sportage 4-го поколения", "красный", 2018, 2.4,"Южная Корея","","","",4,"летняя");
+        Car Hyundai = new Car("Hyundai", "Avante", "оранжевый", 2016, 1.6,"Южная Корея","","","",4,"летняя");
+        Lada.carInfo();
+        Audi.carInfo();
+        BMW.carInfo();
+        Kia.carInfo();
+        Hyundai.carInfo();
 
     }
-
-
-    }
-
+}
