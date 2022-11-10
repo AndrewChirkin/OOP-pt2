@@ -14,7 +14,7 @@ public class Main {
         BMW.carInfo();
         Kia.carInfo();
         Hyundai.carInfo();
-    tireWarning("летняя");
+
     }
     public static void tireWarning(String tireType){
         int currentMonth = LocalDate.now().getMonthValue();

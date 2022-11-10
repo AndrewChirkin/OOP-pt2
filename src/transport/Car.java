@@ -1,6 +1,27 @@
 package transport;
 
 public class Car {
+    public static class Key{
+        private String remoteEngineStart;
+        private String keylessEntry;
+
+        public Key(String remoteEngineStart, String keylessEntry){
+            if(remoteEngineStart != null && !remoteEngineStart.isBlank()){
+            this.remoteEngineStart = remoteEngineStart;
+            }
+            if (keylessEntry!= null && !keylessEntry.isBlank()){
+            this.keylessEntry = keylessEntry;
+            }
+        }
+
+        public String getRemoteEngineStart() {
+            return remoteEngineStart;
+        }
+
+        public String getKeylessEntry() {
+            return keylessEntry;
+        }
+    }
     private  String brand;
     private  String model;
     private String color;
