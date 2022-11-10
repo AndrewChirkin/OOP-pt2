@@ -56,11 +56,12 @@ public class Car {
             System.out.println("Информация не указана.");
         }
         this.numberOfSeats = numberOfSeats;
-        if(tireType != null && !tireType.isBlank() && !tireType.isEmpty()){
+        if(tireType != null && !tireType.isBlank() && !tireType.isEmpty() && (tireType == "зимняя" || tireType == "летняя")){
             this.tireType = tireType;
         } else {
             System.out.println("Информация не указана.");
         }
+
     }
     public String getBrand(){
         return this.brand;
@@ -119,7 +120,11 @@ public class Car {
     }
 
     public void setTireType(String tireType) {
-        this.tireType = tireType;
+        if(tireType == "зимняя" || tireType == "летняя") {
+            this.tireType = tireType;
+        }else {
+            System.out.println("Укажите тип резины(летняя или зимняя).");
+        }
     }
     public void carInfo(){
         System.out.println("Машина - " + brand + " " + model + ", " + productionYear + " года выпуска\n страна производства " + productionCountry + ", цвет - " + color + ", объём двигателя  - " + engineVolume + " литров\n коробка передач - " + transmission + "\n тип кузова - " + bodyType + "\n регистрационный номер - " + registrationNumber + "\n количество мест - " + numberOfSeats + "\n резина - " + tireType);

@@ -17,13 +17,13 @@ public class Main {
     tireWarning("летняя");
     }
     public static void tireWarning(String tireType){
-        String rezina = "летняя";
-        LocalDate winter = null;
-        int cold = winter.getMonthValue();
-        if(tireType.equals(rezina) && cold == 12 ){
-            System.out.println("Пора бы поставить зимнюю резину!");
-        }else if(cold == 3){
-            System.out.println("Пора ставить летнюю резину!");
+        int currentMonth = LocalDate.now().getMonthValue();
+        if (currentMonth >= 11 && tireType == "летняя"){
+            System.out.println("Пора поменять резину на зимнюю!");
+        }else if (currentMonth <= 4 && tireType == "зимняя"){
+            System.out.println("Нужно поставить летнюю резину!");
+        }else {
+            System.out.println("Сезонные шины уже установлены");
         }
     }
 }
