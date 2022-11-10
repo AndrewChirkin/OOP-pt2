@@ -1,16 +1,49 @@
 package transport;
 
+import java.time.LocalDate;
+
 public class Car {
-    public static class Key{
+    public static class Insurance{
+        private LocalDate validity;
+        private double price;
+        private String number;
+        public Insurance(LocalDate validity, double price, String number){
+            if (validity.getYear() <= LocalDate.now().getYear()){
+                this.validity = validity;
+            }
+            if(price < 0 ){
+                this.price = Math.abs(price);
+            }else {
+                this.price = price;
+            }
+            if (number != null && !number.isBlank()){
+                this.number = number;
+            }
+            }
+
+        public String getValidity() {
+            return validity;
+        }
+
+        public double getPrice() {
+            return price;
+        }
+
+        public String getNumber() {
+            return number;
+        }
+    }
+    }
+    public static class Key {
         private String remoteEngineStart;
         private String keylessEntry;
 
-        public Key(String remoteEngineStart, String keylessEntry){
-            if(remoteEngineStart != null && !remoteEngineStart.isBlank()){
-            this.remoteEngineStart = remoteEngineStart;
+        public Key(String remoteEngineStart, String keylessEntry) {
+            if (remoteEngineStart != null && !remoteEngineStart.isBlank()) {
+                this.remoteEngineStart = remoteEngineStart;
             }
-            if (keylessEntry!= null && !keylessEntry.isBlank()){
-            this.keylessEntry = keylessEntry;
+            if (keylessEntry != null && !keylessEntry.isBlank()) {
+                this.keylessEntry = keylessEntry;
             }
         }
 
@@ -21,12 +54,13 @@ public class Car {
         public String getKeylessEntry() {
             return keylessEntry;
         }
+
     }
     private  String brand;
     private  String model;
     private String color;
-    private final int productionYear;
-    private final double engineVolume;
+    private int productionYear;
+    private double engineVolume;
     private String productionCountry;
     private String transmission;
     private String bodyType;

@@ -26,4 +26,19 @@ public class Main {
             System.out.println("Сезонные шины уже установлены");
         }
     }
-}
+    public static void insuranceValidity(LocalDate validity) {
+        LocalDate now = LocalDate.now();
+        if (validity.isBefore(now)) {
+            System.out.println("Срок действия страховки истёк.");
+        } else {
+            System.out.println("Страховка действительна.");
+        }
+    }
+    public static void insuranceNumberChecking(String number){
+        if (number.length() < 9){
+            System.out.println("Номер страховки некорректный!");
+        }else {
+            System.out.println("Всё в порядке!");
+        }
+    }
+    }
